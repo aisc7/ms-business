@@ -40,10 +40,10 @@ export default class RoutesController {
         // Buscar el objeto a actualizar
         const theRoute: Route = await Route.findOrFail(params.id);
         const body = request.body();
-        theRoute.startingPlace = body.startingPlace;
-        theRoute.endingPlace = body.endingPlace;
+        theRoute.starting_place = body.starting_place;
+        theRoute.ending_place = body.ending_place;
         theRoute.distance = body.distance;
-        theRoute.deliveryDate = body.deliveryDate;
+        theRoute.delivery_date = body.delivery_date;
         theRoute.contract_id = body.contract_id;
         theRoute.vehiculo_id = body.vehiculo_id;
 

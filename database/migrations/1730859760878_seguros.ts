@@ -7,8 +7,8 @@ export default class extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
       table.string('compania')
-      table.integer('numero_poliza')
-      table.date('fecha_vencimiento')
+      table.integer('numeroPoliza')
+      table.date('fechaVencimiento')
       table.integer('vehiculo_id').unsigned().references('id').inTable('vehiculos').onDelete('CASCADE')
 
 

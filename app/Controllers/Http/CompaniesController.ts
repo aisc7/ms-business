@@ -45,3 +45,4 @@ export default class CompanysController {
     return await theCompany.delete(); //el teatro que se encontro, eliminelo
   }
 }
+

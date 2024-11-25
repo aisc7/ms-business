@@ -20,7 +20,7 @@ export default class CustomersController {
         await theCustomer.load("contracts");
         await theCustomer.load("naturalperson");
         const userResponse = await axios.get(
-          `${Env.get("MS_SECURITY")}/users/${theCustomer.userId}`,
+          `${Env.get("MS_SECURITY")}/users/${theCustomer.user_id}`,
           {
             headers: { Authorization: request.headers().authorization || "" },
           }
@@ -56,7 +56,7 @@ export default class CustomersController {
       const body = request.body();
       // Llamada al MS_SECURITY para validar al usuario
       const userResponse = await axios.get(
-        `${Env.get("MS_SECURITY")}/users/${body.userId}`,
+        `${Env.get("MS_SECURITY")}/users/${body.user_id}`,
         {
           headers: { Authorization: request.headers().authorization || "" },
         }
@@ -90,7 +90,7 @@ export default class CustomersController {
   public async update({ params, request }: HttpContextContract) {
     const theCustomer: Customer = await Customer.findOrFail(params.id);
     const body = request.body();
-    theCustomer.userId = body.userId;
+    theCustomer.user_id = body.user_id;
     theCustomer.name = body.name;
     theCustomer.email = body.email;
     theCustomer.phone = body.phone;

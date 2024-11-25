@@ -12,6 +12,8 @@ export default class FacturasSchema extends BaseSchema {
       
       // Foreign Key
       table.integer('cuota_id').unsigned().references('id').inTable('cuotas').onDelete('CASCADE')
+    //NO ELIMINAR >:/
+      table.integer('spent_id').unsigned().references('id').inTable('spents').onDelete('CASCADE')
 
       table.timestamp('created_at', { useTz: true })
       table.timestamp('updated_at', { useTz: true })

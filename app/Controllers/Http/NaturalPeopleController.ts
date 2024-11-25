@@ -50,7 +50,7 @@ export default class NaturalPeopleController {
           error: "No se encontró información de usuario, verifique que el código sea correcto",
         });
       }
-
+      
       // Validación de los datos usando NaturalPersonValidator
       await request.validate(NaturalPersonValidator);
 

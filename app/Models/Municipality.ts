@@ -2,6 +2,7 @@ import { DateTime } from 'luxon'
 import { BaseModel, BelongsTo, belongsTo, column, HasMany, hasMany, HasManyThrough, hasManyThrough } from '@ioc:Adonis/Lucid/Orm'
 import Department from './Department'
 import Address from './Address'
+import Restriction from './Restriction'
 import DistributionCenter from './DistributionCenter'
 import Operation from './Operation'
 import Vehiculo from './Vehiculo'
@@ -53,4 +54,8 @@ export default class Municipality extends BaseModel {
     throughForeignKey: 'id' // ID en Conductor
   })
   public conductores: HasManyThrough<typeof Vehiculo>
+
+  @hasMany(() => Restriction)
+  public restrictions: HasMany<typeof Restriction>;
+
 }

@@ -11,13 +11,7 @@ export default class Customer extends BaseModel {
   
   //id que se obtiene del ms-security
   @column()
-  public userId: string
-
-  @column()
-  public name: string
-
-  @column()
-  public email: string
+  public user_id: string
 
   @column()
   public phone: string 

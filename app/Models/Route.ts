@@ -11,16 +11,16 @@ export default class Route extends BaseModel {
   public id: number
 
   @column()
-  public startingPlace: string
+  public starting_place: string
 
   @column()
-  public endingPlace: string
+  public ending_place: string
 
   @column()
   public distance: number
 
   @column()
-  public deliveryDate: DateTime
+  public delivery_date: DateTime
 
   @column()
   public contract_id: number
